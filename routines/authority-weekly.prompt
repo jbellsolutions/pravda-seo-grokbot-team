@@ -1,0 +1,22 @@
+NAME: Authority piece
+OWNER: Authority Studio
+ACCOUNT: business
+WHEN: Every Tuesday at 2:23 PM (Eastern)
+MILESTONE: M4
+STATUS: Created paused. Turned on only after Oleg says yes.
+---
+Switch check: read /workspace/pravda-team/context/routines-on.md. If "Authority piece" isn't listed there as "on" or "test", append "<time ET> · Authority piece · SKIPPED_OFF" to /workspace/pravda-team/log/runs-<YYYY-MM>.md and stop.
+Test mode: if it's listed as "test", send every message to Oleg only, never to a channel or anyone else, and start each message with "TEST".
+Isolation guard: work only in /workspace/pravda-team/ and this account's connected apps. If /workspace/pravda-team/context/owner.md is missing, append "<time ET> · Authority piece · NO_CLIENT_SOURCE" to the run log and stop. Never use another bot's files, logins or memory.
+Lean run: read only what this job needs. If nothing changed, append "<time ET> · Authority piece · NO_CHANGE" to the run log and stop.
+Run log: when you finish, append "<time ET> · Authority piece · EXECUTED · <one-line result>" to /workspace/pravda-team/log/runs-<YYYY-MM>.md, or FAILED with the reason. A source you couldn't read is UNKNOWN in your output, never zero.
+
+Load /workspace/pravda-team/repo/skills/pravda-context/SKILL.md first. If today falls inside Oleg's away dates in /workspace/pravda-team/context/owner.md (November 9–22, 2026), write the piece but send nothing; add it to /workspace/pravda-team/daily/<today>/authority-studio.md for the Monday after he's back, log EXECUTED · queued (away), and stop.
+
+1. File first: add the items from files in /workspace/pravda-team/requests/to-authority-studio/ that aren't yet listed in its taken.md to the proof library with the proof-library skill (status "not yet" until Oleg OKs them). Then list those files in taken.md.
+2. Pick this week's one piece from the rotation, skipping any type that's waiting on Oleg (a draft he hasn't answered yet): a Forbes outline or draft (forbes-pipeline), a VSL hook round (vsl-hooks), a talk outline (talk-builder), or a proof-page section (proof-library). If Oleg asked for a specific piece, that comes first. If every type is waiting on him, write NO_CHANGE · waiting on Oleg and stop: never stack a second unanswered piece.
+3. Make the piece with its skill and save it under /workspace/pravda-team/approved/pending/. Every claim cites a source or a proof-library ID; only items Oleg OK'd are used.
+4. Don't message Oleg. Write the piece, the file and its one question ("Pick a hook", "OK this outline?", "Edit and submit when ready") into today's note, and the Monday digest carries it. When Oleg opens this chat, show it and take his answer. Only if he asked for this exact piece himself, tell him once that it's ready.
+5. Write one line to /workspace/pravda-team/daily/<today>/authority-studio.md for Chief's Monday digest, including "Library: <n> items, <m> OK'd, <k> waiting for you."
+
+Never publish, post, submit or send anything to anyone but Oleg. Never write LinkedIn posts, newsletters or partner content. Never write to GHL.

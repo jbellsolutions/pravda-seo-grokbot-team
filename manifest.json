@@ -1,0 +1,275 @@
+{
+  "schema_version": 1,
+  "build_standard": "client-build/1",
+  "name": "Oleg's Pravda SEO team (Grok Bot)",
+  "description": "Seven Grok bots for the parts of Pravda SEO that Oleg's Hermes agents don't run: client wins and referral asks (Client Desk), client listing health and a private GBP playbook (Maps Desk), proof, Forbes, VSL hooks and talks (Authority Studio), emergency-dental and pay-per-call on legitimate inventory (Call Desk), monthly channel research (Channel Scout), the money view (Profit Desk), and a lead (Chief) that keeps his notes, Dream Map and ideas and sends one message a week. Read-only on GoHighLevel; the partner program stays with the Hermes agents in Telegram.",
+  "platform": "xAI Grok Bot (x.ai/bot)",
+  "entry_point": "START-HERE.md",
+  "owner": "Oleg",
+  "timezone": "America/New_York",
+  "repo_url": "https://github.com/jbellsolutions/pravda-seo-grokbot-team",
+  "accounts": {
+    "business": {
+      "lead_bot": "Chief",
+      "workspace": "/workspace/pravda-team"
+    }
+  },
+  "agents": [
+    {
+      "name": "Chief",
+      "charter": "agents/01-chief.md",
+      "account": "business",
+      "milestone": "M0",
+      "routines": [
+        "routines/chief-pravda-week.prompt",
+        "routines/chief-records-sweep.prompt"
+      ],
+      "skills": [
+        "pravda-context",
+        "getting-started",
+        "ask-ledger",
+        "dream-map",
+        "pravda-week",
+        "records-desk",
+        "call-notes",
+        "developer-task-card"
+      ]
+    },
+    {
+      "name": "Client Desk",
+      "charter": "agents/02-client-desk.md",
+      "account": "business",
+      "milestone": "M3",
+      "routines": [
+        "routines/client-monthly-pulse.prompt",
+        "routines/client-win-asks.prompt",
+        "routines/client-price-review.prompt"
+      ],
+      "skills": [
+        "pravda-context",
+        "client-roster",
+        "client-pulse",
+        "client-referral-ask",
+        "price-review",
+        "testimonial-request"
+      ]
+    },
+    {
+      "name": "Call Desk",
+      "charter": "agents/03-call-desk.md",
+      "account": "business",
+      "milestone": "M5",
+      "routines": [
+        "routines/call-desk-weekly.prompt"
+      ],
+      "skills": [
+        "pravda-context",
+        "ppc-market-map",
+        "ppc-buyer-outreach",
+        "ppc-pilot"
+      ]
+    },
+    {
+      "name": "Authority Studio",
+      "charter": "agents/04-authority-studio.md",
+      "account": "business",
+      "milestone": "M4",
+      "routines": [
+        "routines/authority-weekly.prompt"
+      ],
+      "skills": [
+        "pravda-context",
+        "proof-library",
+        "forbes-pipeline",
+        "vsl-hooks",
+        "talk-builder"
+      ]
+    },
+    {
+      "name": "Maps Desk",
+      "charter": "agents/05-maps-desk.md",
+      "account": "business",
+      "milestone": "M3",
+      "routines": [
+        "routines/maps-listing-check.prompt",
+        "routines/maps-rank-intake.prompt"
+      ],
+      "skills": [
+        "pravda-context",
+        "listing-watch",
+        "rank-intake",
+        "gbp-playbook"
+      ]
+    },
+    {
+      "name": "Channel Scout",
+      "charter": "agents/06-channel-scout.md",
+      "account": "business",
+      "milestone": "M6",
+      "routines": [
+        "routines/scout-monthly.prompt"
+      ],
+      "skills": [
+        "pravda-context",
+        "channel-research",
+        "competitor-teardown"
+      ]
+    },
+    {
+      "name": "Profit Desk",
+      "charter": "agents/07-profit-desk.md",
+      "account": "business",
+      "milestone": "M6",
+      "routines": [
+        "routines/profit-monthly.prompt",
+        "routines/profit-spend-watch.prompt"
+      ],
+      "skills": [
+        "pravda-context",
+        "money-snapshot",
+        "spend-watch"
+      ]
+    },
+    {
+      "name": "Partner Engine",
+      "charter": "agents/90-partner-engine.md",
+      "account": "business",
+      "milestone": "M8",
+      "reserved": true,
+      "routines": [],
+      "skills": []
+    },
+    {
+      "name": "Deal Desk",
+      "charter": "agents/91-deal-desk.md",
+      "account": "business",
+      "milestone": "M9",
+      "reserved": true,
+      "routines": [],
+      "skills": []
+    }
+  ],
+  "skills": [
+    {
+      "name": "pravda-context",
+      "path": "skills/pravda-context"
+    },
+    {
+      "name": "getting-started",
+      "path": "skills/getting-started"
+    },
+    {
+      "name": "ask-ledger",
+      "path": "skills/ask-ledger"
+    },
+    {
+      "name": "dream-map",
+      "path": "skills/dream-map"
+    },
+    {
+      "name": "pravda-week",
+      "path": "skills/pravda-week"
+    },
+    {
+      "name": "records-desk",
+      "path": "skills/records-desk"
+    },
+    {
+      "name": "call-notes",
+      "path": "skills/call-notes"
+    },
+    {
+      "name": "developer-task-card",
+      "path": "skills/developer-task-card"
+    },
+    {
+      "name": "client-roster",
+      "path": "skills/client-roster"
+    },
+    {
+      "name": "client-pulse",
+      "path": "skills/client-pulse"
+    },
+    {
+      "name": "client-referral-ask",
+      "path": "skills/client-referral-ask"
+    },
+    {
+      "name": "price-review",
+      "path": "skills/price-review"
+    },
+    {
+      "name": "testimonial-request",
+      "path": "skills/testimonial-request"
+    },
+    {
+      "name": "ppc-market-map",
+      "path": "skills/ppc-market-map"
+    },
+    {
+      "name": "ppc-buyer-outreach",
+      "path": "skills/ppc-buyer-outreach"
+    },
+    {
+      "name": "ppc-pilot",
+      "path": "skills/ppc-pilot"
+    },
+    {
+      "name": "proof-library",
+      "path": "skills/proof-library"
+    },
+    {
+      "name": "forbes-pipeline",
+      "path": "skills/forbes-pipeline"
+    },
+    {
+      "name": "vsl-hooks",
+      "path": "skills/vsl-hooks"
+    },
+    {
+      "name": "talk-builder",
+      "path": "skills/talk-builder"
+    },
+    {
+      "name": "listing-watch",
+      "path": "skills/listing-watch"
+    },
+    {
+      "name": "rank-intake",
+      "path": "skills/rank-intake"
+    },
+    {
+      "name": "gbp-playbook",
+      "path": "skills/gbp-playbook"
+    },
+    {
+      "name": "channel-research",
+      "path": "skills/channel-research"
+    },
+    {
+      "name": "competitor-teardown",
+      "path": "skills/competitor-teardown"
+    },
+    {
+      "name": "money-snapshot",
+      "path": "skills/money-snapshot"
+    },
+    {
+      "name": "spend-watch",
+      "path": "skills/spend-watch"
+    }
+  ],
+  "projects": [
+    "projects/pay-per-call-pilot/SPEC.md",
+    "projects/proof-page/SPEC.md"
+  ],
+  "works_beside": {
+    "package": "pravda-seo-growth-team",
+    "platform": "Hermes overlay",
+    "owns": "the partner program, Instantly, Telegram, GHL writes, the daily brief, Map Pack, LinkedIn, newsletters, hiring"
+  },
+  "policies": [
+    "policies/APPROVALS.md",
+    "policies/DATA.md"
+  ]
+}

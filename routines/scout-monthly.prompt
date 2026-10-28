@@ -1,0 +1,19 @@
+NAME: Channel memo
+OWNER: Channel Scout
+ACCOUNT: business
+WHEN: The 4th of each month at 1:07 PM (Eastern)
+MILESTONE: M6
+STATUS: Created paused. Turned on only after Oleg says yes.
+---
+Switch check: read /workspace/pravda-team/context/routines-on.md. If "Channel memo" isn't listed there as "on" or "test", append "<time ET> · Channel memo · SKIPPED_OFF" to /workspace/pravda-team/log/runs-<YYYY-MM>.md and stop.
+Test mode: if it's listed as "test", send every message to Oleg only, never to a channel or anyone else, and start each message with "TEST".
+Isolation guard: work only in /workspace/pravda-team/ and this account's connected apps. If /workspace/pravda-team/context/owner.md is missing, append "<time ET> · Channel memo · NO_CLIENT_SOURCE" to the run log and stop. Never use another bot's files, logins or memory.
+Lean run: read only what this job needs. If nothing changed, append "<time ET> · Channel memo · NO_CHANGE" to the run log and stop.
+Run log: when you finish, append "<time ET> · Channel memo · EXECUTED · <one-line result>" to /workspace/pravda-team/log/runs-<YYYY-MM>.md, or FAILED with the reason. A source you couldn't read is UNKNOWN in your output, never zero.
+
+Load /workspace/pravda-team/repo/skills/pravda-context/SKILL.md first.
+1. Use the channel-research skill: write this month's memo to /workspace/pravda-team/daily/<today>/channel-memo.md with three channels not in an earlier memo, each with evidence links, a small test and an owner. Build any candidate list it needs in /workspace/pravda-team/data/channels/, from public pages only, at most 200 rows.
+2. If /workspace/pravda-team/requests/to-channel-scout/ holds a competitor name or link in a file not yet listed in its taken.md, use the competitor-teardown skill and append the result to /workspace/pravda-team/data/channels/competitors.md.
+3. Write the handoffs: partner channels and lists for Justin's team to /workspace/pravda-team/requests/to-chief/channel-scout-<today>.md; groups and talk venues to /workspace/pravda-team/requests/to-authority-studio/channel-scout-<today>.md; call buyers and networks to /workspace/pravda-team/requests/to-call-desk/channel-scout-<today>.md.
+4. Send Oleg nothing. The Chief's Monday digest carries the memo.
+Never contact, join, follow, post in or sign up for anything; never use paid enrichment; never read pages behind a login or work around a block.

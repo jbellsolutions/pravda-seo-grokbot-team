@@ -1,0 +1,19 @@
+NAME: Listing check
+OWNER: Maps Desk
+ACCOUNT: business
+WHEN: Every Monday at 7:13 AM (Eastern)
+MILESTONE: M3
+STATUS: Created paused. Turned on only after Oleg says yes.
+---
+Switch check: read /workspace/pravda-team/context/routines-on.md. If "Listing check" isn't listed there as "on" or "test", append "<time ET> · Listing check · SKIPPED_OFF" to /workspace/pravda-team/log/runs-<YYYY-MM>.md and stop.
+Test mode: if it's listed as "test", send every message to Oleg only, never to a channel or anyone else, and start each message with "TEST".
+Isolation guard: work only in /workspace/pravda-team/ and this account's connected apps. If /workspace/pravda-team/context/owner.md is missing, append "<time ET> · Listing check · NO_CLIENT_SOURCE" to the run log and stop. Never use another bot's files, logins or memory.
+Lean run: read only what this job needs. If nothing changed, append "<time ET> · Listing check · NO_CHANGE" to the run log and stop.
+Run log: when you finish, append "<time ET> · Listing check · EXECUTED · <one-line result>" to /workspace/pravda-team/log/runs-<YYYY-MM>.md, or FAILED with the reason. A source you couldn't read is UNKNOWN in your output, never zero.
+
+Load the pravda-context skill, then use the listing-watch skill.
+First add any new listing URLs from /workspace/pravda-team/requests/to-maps-desk/ (files not yet listed in its taken.md) to /workspace/pravda-team/data/listings.md. If the watchlist is still empty, log NO_CLIENT_SOURCE: listing URLs and stop.
+Open each listing's public Google Maps page, signed out. Record live, changed (old → new for name, category, rating, review count), closed, gone or UNKNOWN in /workspace/pravda-team/data/listings.md. A listing is gone only when a second load and a search for the business name in its city both say so, or a Google notice in Gmail does. A page with a block or CAPTCHA is UNKNOWN (blocked): stop for that listing, and stop the run if two in a row are blocked.
+Write the totals and every listing that isn't plain live to /workspace/pravda-team/daily/<today>/listing-check.md for the Chief's 8:47 AM digest.
+Alert Oleg the same day only for a listing that is gone or closed (this alert goes out even during his away dates), and append each such event to /workspace/pravda-team/data/gbp-log.md.
+Never sign in to anything, never report, edit, appeal or claim a listing, and never contact a client, vendor or Google.

@@ -1,0 +1,20 @@
+NAME: Pravda week
+OWNER: Chief
+ACCOUNT: business
+WHEN: Every Monday at 8:47 AM (Eastern Time)
+MILESTONE: M3
+STATUS: Created paused. Turned on only after Oleg says yes.
+---
+Switch check: read /workspace/pravda-team/context/routines-on.md. If "Pravda week" isn't listed there as "on" or "test", append "<time> · Pravda week · SKIPPED_OFF" to /workspace/pravda-team/log/runs-<YYYY-MM>.md and stop.
+Test mode: if it's listed as "test", send every message to Oleg only, never to a channel or anyone else, and start each message with "TEST".
+Isolation guard: work only in /workspace/pravda-team/ and this account's connected apps. If /workspace/pravda-team/context/owner.md is missing, append "<time> · Pravda week · NO_CLIENT_SOURCE" to the run log and stop. Never use another bot's files, logins or memory.
+Lean run: read only what this job needs. If nothing changed, append "<time> · Pravda week · NO_CHANGE" to the run log and stop.
+Run log: when you finish, append "<time> · Pravda week · EXECUTED · <one-line result>" to /workspace/pravda-team/log/runs-<YYYY-MM>.md, or FAILED with the reason. A source you couldn't read is UNKNOWN in your output, never zero.
+
+Load the pravda-context skill, then follow the pravda-week skill.
+Away check first: if today is between Nov 9 and Nov 22, 2026, or inside away dates in /workspace/pravda-team/context/owner.md, write the digest to /workspace/pravda-team/daily/<today>/chief-week.md marked "QUEUED (away)", send nothing, log EXECUTED · queued (away), and stop.
+Otherwise gather the past 7 days from /workspace/pravda-team/daily/, the drafts waiting in /workspace/pravda-team/approved/pending/, the items in /workspace/pravda-team/requests/to-chief/, last month's /workspace/pravda-team/data/money/<YYYY-MM>.md if it exists, the run log, and partner counts by stage from GHL with the read-only token (counts only).
+If today is the first Monday of the month, run the dream-map skill's dream check and include it.
+Route each new file in requests/to-chief/ (not yet in its taken.md) by its For: line. For: Oleg goes into the digest's decisions. For: developer becomes a task card with the developer-task-card skill, after Oleg's OK. For: Justin's team goes into /workspace/pravda-team/requests/for-justins-team.md, with client names left out. A file with no For: line is for Oleg. Then add the file name to requests/to-chief/taken.md.
+Write the digest to /workspace/pravda-team/daily/<today>/chief-week.md and send it to Oleg as ONE message under 250 words, his one action first. This is the only scheduled message the Grok team sends him this week. Never write in GHL. A missing bot file means "didn't run", never "nothing happened". Never send twice: if you're not sure the message went, check the chat before trying once more.
+Even if nothing changed, the Monday message still goes out (it's the one message that always does), unless it's queued for away dates.

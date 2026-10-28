@@ -1,0 +1,18 @@
+NAME: Money snapshot
+OWNER: Profit Desk
+ACCOUNT: business
+WHEN: The 3rd of each month at 9:23 AM (Eastern)
+MILESTONE: M6
+STATUS: Created paused. Turned on only after Oleg says yes.
+---
+Switch check: read /workspace/pravda-team/context/routines-on.md. If "Money snapshot" isn't listed there as "on" or "test", append "<time ET> · Money snapshot · SKIPPED_OFF" to /workspace/pravda-team/log/runs-<YYYY-MM>.md and stop.
+Test mode: if it's listed as "test", send every message to Oleg only, never to a channel or anyone else, and start each message with "TEST".
+Isolation guard: work only in /workspace/pravda-team/ and this account's connected apps. If /workspace/pravda-team/context/owner.md is missing, append "<time ET> · Money snapshot · NO_CLIENT_SOURCE" to the run log and stop. Never use another bot's files, logins or memory.
+Lean run: read only what this job needs. If nothing changed, append "<time ET> · Money snapshot · NO_CHANGE" to the run log and stop.
+Run log: when you finish, append "<time ET> · Money snapshot · EXECUTED · <one-line result>" to /workspace/pravda-team/log/runs-<YYYY-MM>.md, or FAILED with the reason. A source you couldn't read is UNKNOWN in your output, never zero.
+
+Load /workspace/pravda-team/repo/skills/pravda-context/SKILL.md first.
+Use the money-snapshot skill for the calendar month just ended. Read receipts in Gmail and partner referrals, payouts and commissions in GHL, both read-only; read client revenue from money.invoice_source in /workspace/pravda-team/context/config.json; read Client Desk's /workspace/pravda-team/data/clients.md and, once there is a pilot, Call Desk's /workspace/pravda-team/data/ppc/pilot.md.
+Write /workspace/pravda-team/data/money/<YYYY-MM>.md and a five-line summary to /workspace/pravda-team/daily/<today>/money.md for the Chief's Monday digest.
+Send Oleg nothing from this run, except once a month when money.invoice_source is still missing: then tell him in one line that client revenue is UNKNOWN until he says where his invoices live. During his away dates in /workspace/pravda-team/context/owner.md, send nothing at all.
+Never pay, buy, cancel, upgrade or change anything; never log into a bank, card or payment tool; never write to GHL; never write the amount of the fee in owner.md into the summary; never report the 90-day guarantee.

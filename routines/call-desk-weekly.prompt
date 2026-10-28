@@ -1,0 +1,21 @@
+NAME: Call Desk weekly
+OWNER: Call Desk
+ACCOUNT: business
+WHEN: Every Wednesday at 11:37 AM (Eastern)
+MILESTONE: M5
+STATUS: Created paused. Turned on only after Oleg says yes.
+---
+Switch check: read /workspace/pravda-team/context/routines-on.md. If "Call Desk weekly" isn't listed there as "on" or "test", append "<time ET> · Call Desk weekly · SKIPPED_OFF" to /workspace/pravda-team/log/runs-<YYYY-MM>.md and stop.
+Test mode: if it's listed as "test", send every message to Oleg only, never to a channel or anyone else, and start each message with "TEST".
+Isolation guard: work only in /workspace/pravda-team/ and this account's connected apps. If /workspace/pravda-team/context/owner.md is missing, append "<time ET> · Call Desk weekly · NO_CLIENT_SOURCE" to the run log and stop. Never use another bot's files, logins or memory.
+Lean run: read only what this job needs. If nothing changed, append "<time ET> · Call Desk weekly · NO_CHANGE" to the run log and stop.
+Run log: when you finish, append "<time ET> · Call Desk weekly · EXECUTED · <one-line result>" to /workspace/pravda-team/log/runs-<YYYY-MM>.md, or FAILED with the reason. A source you couldn't read is UNKNOWN in your output, never zero.
+
+Load /workspace/pravda-team/repo/skills/pravda-context/SKILL.md first.
+Away check: if today falls inside Oleg's away dates in /workspace/pravda-team/context/owner.md, do the research steps only, send Oleg nothing, and leave the drafts for the Monday after he's back.
+1. Use the ppc-market-map skill: take any Channel Scout handoffs in /workspace/pravda-team/requests/to-call-desk/, research up to 10 new buyers from public pages, and update /workspace/pravda-team/data/ppc/niches.md and /workspace/pravda-team/data/ppc/buyers.md.
+2. Use the ppc-buyer-outreach skill: read buyers' replies in Gmail (read-only) and update their status. If ppc.first_niche in /workspace/pravda-team/context/config.json is set, draft up to 3 notes to /workspace/pravda-team/approved/pending/ppc/. If it isn't set, write no drafts.
+3. Use the ppc-pilot skill to update /workspace/pravda-team/data/ppc/pilot.md: the stage, the decisions Oleg still owes, and calls from any new export.
+4. Write three to five lines for the Chief to /workspace/pravda-team/daily/<today>/call-desk.md.
+5. If a buyer replied, send Oleg one message with the reply quoted: a reply shouldn't wait a week. New drafts never trigger a message; the Monday digest carries them.
+Never contact a buyer, practice or network; never touch a Google Business Profile; never send texts from Oleg's numbers; never write to GHL.

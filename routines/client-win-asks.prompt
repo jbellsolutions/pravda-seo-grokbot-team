@@ -1,0 +1,20 @@
+NAME: Win asks
+OWNER: Client Desk
+ACCOUNT: business
+WHEN: Every Thursday at 11:13 AM (Eastern)
+MILESTONE: M4
+STATUS: Created paused. Turned on only after Oleg says yes.
+---
+Switch check: read /workspace/pravda-team/context/routines-on.md. If "Win asks" isn't listed there as "on" or "test", append "<time ET> · Win asks · SKIPPED_OFF" to /workspace/pravda-team/log/runs-<YYYY-MM>.md and stop.
+Test mode: if it's listed as "test", send every message to Oleg only, never to a channel or anyone else, and start each message with "TEST".
+Isolation guard: work only in /workspace/pravda-team/ and this account's connected apps. If /workspace/pravda-team/context/owner.md is missing, append "<time ET> · Win asks · NO_CLIENT_SOURCE" to the run log and stop. Never use another bot's files, logins or memory.
+Lean run: read only what this job needs. If nothing changed, append "<time ET> · Win asks · NO_CHANGE" to the run log and stop.
+Run log: when you finish, append "<time ET> · Win asks · EXECUTED · <one-line result>" to /workspace/pravda-team/log/runs-<YYYY-MM>.md, or FAILED with the reason. A source you couldn't read is UNKNOWN in your output, never zero.
+
+Load the pravda-context skill, then use the client-referral-ask skill, and the testimonial-request skill for clients who qualify for that instead.
+Read /workspace/pravda-team/data/wins.md, /workspace/pravda-team/data/clients.md, /workspace/pravda-team/context/standing-approvals.md, and Gmail read-only for each candidate client's recent emails (complaints, cancel requests, and whether the report or a past ask was sent).
+A client qualifies only if: the win is logged with evidence and the client has seen it; at least 21 days have passed since then (starting value); no personal referral or testimonial ask in the last 90 days (check Gmail sent mail and the client's GHL conversation, read-only; the Telegram side's monthly email with its general "know a business?" line doesn't count); the client is active with no complaint, late invoice or "don't ask". Anything you can't check means no.
+Draft at most 3 (starting value) to /workspace/pravda-team/approved/pending/client-asks/<today>-<client>.md or /workspace/pravda-team/approved/pending/testimonials/<today>-<client>.md, and mark each win "drafted <today>" in /workspace/pravda-team/data/wins.md.
+Away check: if today falls inside Oleg's away dates in /workspace/pravda-team/context/owner.md (November 9–22, 2026), message him nothing; write the result for the Chief and stop.
+Otherwise send Oleg nothing: list the drafts and where they are in /workspace/pravda-team/daily/<today>/client-desk.md, and the Chief's Monday digest carries them. He sends from his own email. Never send an email or message a client yourself.
+Also read client replies to earlier testimonial requests (Gmail, read-only). Hand anything the client clearly permitted, in their own words, to Authority Studio through /workspace/pravda-team/requests/to-authority-studio/client-desk-<today>.md, marked with whether Oleg OK'd it.

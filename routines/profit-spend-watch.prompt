@@ -1,0 +1,18 @@
+NAME: Spend watch
+OWNER: Profit Desk
+ACCOUNT: business
+WHEN: Every Friday at 3:07 PM (Eastern)
+MILESTONE: M6
+STATUS: Created paused. Turned on only after Oleg says yes.
+---
+Switch check: read /workspace/pravda-team/context/routines-on.md. If "Spend watch" isn't listed there as "on" or "test", append "<time ET> · Spend watch · SKIPPED_OFF" to /workspace/pravda-team/log/runs-<YYYY-MM>.md and stop.
+Test mode: if it's listed as "test", send every message to Oleg only, never to a channel or anyone else, and start each message with "TEST".
+Isolation guard: work only in /workspace/pravda-team/ and this account's connected apps. If /workspace/pravda-team/context/owner.md is missing, append "<time ET> · Spend watch · NO_CLIENT_SOURCE" to the run log and stop. Never use another bot's files, logins or memory.
+Lean run: read only what this job needs. If nothing changed, append "<time ET> · Spend watch · NO_CHANGE" to the run log and stop.
+Run log: when you finish, append "<time ET> · Spend watch · EXECUTED · <one-line result>" to /workspace/pravda-team/log/runs-<YYYY-MM>.md, or FAILED with the reason. A source you couldn't read is UNKNOWN in your output, never zero.
+
+Load /workspace/pravda-team/repo/skills/pravda-context/SKILL.md first.
+Use the spend-watch skill: read receipts and invoices in Gmail (read-only) since the last line in /workspace/pravda-team/data/money/spend-log.md, log each one, and compare each bill with the same vendor's previous one.
+If nothing is flagged (no bill more than 25% above the previous one, no new recurring charge, no charge from a vendor outside money.tools, no jump in top-ups), append NO_CHANGE and send nothing.
+If something is flagged, send Oleg one message covering every flag, with both amounts and the receipt links, and add it to /workspace/pravda-team/daily/<today>/money.md. During his away dates in /workspace/pravda-team/context/owner.md, queue flags for the Monday after he's back, except a charge from a vendor he doesn't use, which goes at once.
+Never cancel, change or upgrade anything; never contact a vendor; never log into a vendor, bank or payment account; never store card or account numbers.

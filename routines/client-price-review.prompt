@@ -1,0 +1,20 @@
+NAME: Price review
+OWNER: Client Desk
+ACCOUNT: business
+WHEN: The 5th of each month at 10:43 AM (Eastern)
+MILESTONE: M4
+STATUS: Created paused. Turned on only after Oleg says yes.
+---
+Switch check: read /workspace/pravda-team/context/routines-on.md. If "Price review" isn't listed there as "on" or "test", append "<time ET> · Price review · SKIPPED_OFF" to /workspace/pravda-team/log/runs-<YYYY-MM>.md and stop.
+Test mode: if it's listed as "test", send every message to Oleg only, never to a channel or anyone else, and start each message with "TEST".
+Isolation guard: work only in /workspace/pravda-team/ and this account's connected apps. If /workspace/pravda-team/context/owner.md is missing, append "<time ET> · Price review · NO_CLIENT_SOURCE" to the run log and stop. Never use another bot's files, logins or memory.
+Lean run: read only what this job needs. If nothing changed, append "<time ET> · Price review · NO_CHANGE" to the run log and stop.
+Run log: when you finish, append "<time ET> · Price review · EXECUTED · <one-line result>" to /workspace/pravda-team/log/runs-<YYYY-MM>.md, or FAILED with the reason. A source you couldn't read is UNKNOWN in your output, never zero.
+
+Run only in January, April, July and October. In any other month, append "<time ET> · Price review · NO_CHANGE · not a review month" to the run log and stop.
+Load the pravda-context skill, then use the price-review skill.
+Read /workspace/pravda-team/data/clients.md, /workspace/pravda-team/data/wins.md, /workspace/pravda-team/data/listings.md, /workspace/pravda-team/data/price-review.md and the plans in /workspace/pravda-team/context/owner.md.
+List up to 10 active clients (starting value) who have paid the same price longest and have fresh wins with evidence. Leave out anyone with a complaint, a late invoice, a recent drop, or whom Oleg excluded last quarter. Clients with no win go under "build the case first".
+Write the list under this quarter's heading in /workspace/pravda-team/data/price-review.md, and one talk-track draft per client to /workspace/pravda-team/approved/pending/price-review/<quarter>-<client>.md. The price and plan stay blank for Oleg to fill in.
+Write the list for the Chief's next Monday digest to /workspace/pravda-team/requests/to-chief/client-desk-<today>.md, starting with the line "For: Oleg". Away check: if today falls inside Oleg's away dates in /workspace/pravda-team/context/owner.md (November 9–22, 2026), message him nothing; write the result for the Chief and stop.
+Never contact a client, never pick a price, and never change a plan, invoice or GHL record.

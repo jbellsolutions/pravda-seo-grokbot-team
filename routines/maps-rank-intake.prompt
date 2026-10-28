@@ -1,0 +1,18 @@
+NAME: Rank intake
+OWNER: Maps Desk
+ACCOUNT: business
+WHEN: Every weekday at 6:37 PM (Eastern)
+MILESTONE: M3
+STATUS: Created paused. Turned on only after Oleg says yes.
+---
+Switch check: read /workspace/pravda-team/context/routines-on.md. If "Rank intake" isn't listed there as "on" or "test", append "<time ET> · Rank intake · SKIPPED_OFF" to /workspace/pravda-team/log/runs-<YYYY-MM>.md and stop.
+Test mode: if it's listed as "test", send every message to Oleg only, never to a channel or anyone else, and start each message with "TEST".
+Isolation guard: work only in /workspace/pravda-team/ and this account's connected apps. If /workspace/pravda-team/context/owner.md is missing, append "<time ET> · Rank intake · NO_CLIENT_SOURCE" to the run log and stop. Never use another bot's files, logins or memory.
+Lean run: read only what this job needs. If nothing changed, append "<time ET> · Rank intake · NO_CHANGE" to the run log and stop.
+Run log: when you finish, append "<time ET> · Rank intake · EXECUTED · <one-line result>" to /workspace/pravda-team/log/runs-<YYYY-MM>.md, or FAILED with the reason. A source you couldn't read is UNKNOWN in your output, never zero.
+
+Load the pravda-context skill, then use the rank-intake skill.
+Look for rank reports that arrived since the last run: Gmail, read-only, matching rank_reports.email_from and rank_reports.subject_contains in /workspace/pravda-team/context/config.json (skip Gmail and say so if those are REQUIRED), plus files in /workspace/pravda-team/data/rankings/inbox/.
+Match each report to a client in /workspace/pravda-team/data/clients.md. Unclear matches go to /workspace/pravda-team/data/rankings/unmatched/. File each as /workspace/pravda-team/data/rankings/<client>/<report date>-<tool>.<ext>, and add one line to /workspace/pravda-team/data/rankings/index.md, with numbers copied exactly as printed or UNKNOWN if the format can't be read.
+Also read Google notices in Gmail about client listings. Append each to /workspace/pravda-team/data/gbp-log.md (quoted), and alert Oleg the same day only if it says a listing was suspended or removed.
+Send nothing else. Never log in to a rank tool or Google, never change a number, and never delete an email or file.

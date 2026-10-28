@@ -1,0 +1,18 @@
+NAME: Client pulse
+OWNER: Client Desk
+ACCOUNT: business
+WHEN: 2nd of each month at 10:17 AM (Eastern)
+MILESTONE: M3
+STATUS: Created paused. Turned on only after Oleg says yes.
+---
+Switch check: read /workspace/pravda-team/context/routines-on.md. If "Client pulse" isn't listed there as "on" or "test", append "<time ET> · Client pulse · SKIPPED_OFF" to /workspace/pravda-team/log/runs-<YYYY-MM>.md and stop.
+Test mode: if it's listed as "test", send every message to Oleg only, never to a channel or anyone else, and start each message with "TEST".
+Isolation guard: work only in /workspace/pravda-team/ and this account's connected apps. If /workspace/pravda-team/context/owner.md is missing, append "<time ET> · Client pulse · NO_CLIENT_SOURCE" to the run log and stop. Never use another bot's files, logins or memory.
+Lean run: read only what this job needs. If nothing changed, append "<time ET> · Client pulse · NO_CHANGE" to the run log and stop.
+Run log: when you finish, append "<time ET> · Client pulse · EXECUTED · <one-line result>" to /workspace/pravda-team/log/runs-<YYYY-MM>.md, or FAILED with the reason. A source you couldn't read is UNKNOWN in your output, never zero.
+
+Load the pravda-context skill, then use the client-pulse skill.
+First use the client-roster skill on any file in /workspace/pravda-team/requests/to-client-desk/ that isn't listed in its taken.md. Then read /workspace/pravda-team/data/clients.md (active clients), /workspace/pravda-team/data/rankings/index.md and the per-client report files the Maps Desk filed, /workspace/pravda-team/data/listings.md and /workspace/pravda-team/data/wins.md. If the roster is missing or has no active client, log NO_CLIENT_SOURCE: client roster and stop.
+For each active client, compare the newest report with the previous one, like for like. Append new wins, each citing two report files, to /workspace/pravda-team/data/wins.md. Write one line per client (win, drop, no change, or UNKNOWN with the reason) to /workspace/pravda-team/daily/<today>/client-pulse.md for the Chief's Monday digest.
+If a client dropped two pulses in a row, write /workspace/pravda-team/requests/to-chief/client-desk-<today>.md, starting with the line "For: Oleg".
+Send Oleg nothing from this routine: the Chief carries the pulse. Never contact a client, never write the rankings files or GHL.
