@@ -53,7 +53,7 @@ Out, always: SEO agencies; e-commerce and Shopify; national franchise marketing 
    - Skip any page behind a login, a block or a CAPTCHA, and count it as "blocked".
 5. Write the memo to `/workspace/pravda-team/daily/<today>/channel-memo.md`.
 6. Hand off:
-   - Partner channels and lists, to `/workspace/pravda-team/requests/to-chief/channel-scout-<date>.md`, with "for Justin's team: Hermes partner side" on top.
+   - Partner channels and lists, to `/workspace/pravda-team/requests/to-chief/channel-scout-<date>-partners.md`, starting with the line `For: Justin's team` (Hermes partner side).
    - Groups and talk venues, to `/workspace/pravda-team/requests/to-authority-studio/channel-scout-<date>.md`.
    - Call buyers and networks, to `/workspace/pravda-team/requests/to-call-desk/channel-scout-<date>.md`.
 7. Add each request file you answered to `/workspace/pravda-team/requests/to-channel-scout/taken.md`. Never edit the request itself.

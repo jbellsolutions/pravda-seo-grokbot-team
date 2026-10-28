@@ -18,7 +18,7 @@ Oleg asked "who will be managing it?" (Oct 21) and wants the least work possible
   - `channel-memo.md` (Channel Scout)
   - `money.md` (Profit Desk)
   - any `<bot>.md`
-- `/workspace/pravda-team/approved/pending/`: every draft waiting for his yes. Count them by folder and note the oldest.
+- `/workspace/pravda-team/approved/pending/`: every draft waiting for his yes. Count them by owner bot and folder, and note the oldest.
 - `/workspace/pravda-team/requests/to-chief/`: items other bots handed you this week.
 - `/workspace/pravda-team/data/money/<YYYY-MM>.md`: last month's Profit Desk snapshot, if it exists.
 - GHL, with the read-only token: partner counts by stage in the Partner Recruiting and Partner Lifecycle pipelines. Read counts only.
@@ -52,10 +52,10 @@ Oleg asked "who will be managing it?" (Oct 21) and wants the least work possible
 ```
 Pravda week · Mon Nov 30
 
-Your one thing: approve 2 client referral asks (oldest waiting since Nov 17). They're in your Grok chat from Client Desk.
+Your one thing: approve 2 client referral asks (oldest waiting since Nov 17). Open Client Desk to see them.
 
 Clients: 3 wins (2 map-pack gains, 1 new top-3 keyword), 1 drop to watch. No listing is gone.
-Waiting for your yes: 5 drafts. Client asks 2, Forbes outline 1, buyer notes 2.
+Waiting for your yes: Client Desk 2 asks · Authority Studio 1 Forbes outline · Call Desk 2 buyer notes. Open that bot to see them.
 Partners (GHL, read-only): Engaged 4 · Booked 1 · Signed 2.
 Money (October, Profit Desk): tools and leads cost UNKNOWN. Invoices source not connected yet.
 Sent to Justin's team: 1 partner list from Channel Scout, for the partner side.
@@ -68,6 +68,7 @@ On the first Monday of the month, add the dream check from the `dream-map` skill
 
 - Exactly one message went to Oleg, or the digest was queued during away dates.
 - The action at the top is one sentence and says where to look.
+- Every draft in `approved/pending/` is counted under the bot that owns it, with "open that bot". Drafts reach Oleg only this way.
 - Every count is backed by a file, a GHL count or a log line, and every missing source says UNKNOWN or "didn't run".
 - `requests/for-justins-team.md` has every item handed off this week.
 

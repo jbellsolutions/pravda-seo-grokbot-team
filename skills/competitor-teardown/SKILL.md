@@ -40,7 +40,7 @@ Not worth copying: … (for example: sending in his name without his yes)
 Sources: <links>
 ```
 
-Add a three-line summary to `/workspace/pravda-team/requests/to-chief/channel-scout-<date>.md` so it reaches Oleg in the Monday digest. Anything about the partner campaign is marked "for Justin's team: Hermes partner side".
+Add a three-line summary to `/workspace/pravda-team/requests/to-chief/channel-scout-<date>-teardown.md`, starting with the line `For: Oleg`, so it reaches him in the Monday digest. Anything about the partner campaign goes in `channel-scout-<date>-partners.md` instead, starting with the line `For: Justin's team` (Hermes partner side).
 
 ## Done
 

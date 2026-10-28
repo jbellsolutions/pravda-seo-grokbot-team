@@ -33,7 +33,7 @@ Work only in `/workspace/pravda-team/`. Client Desk is the only writer of `data/
    ```
    **Client has seen it?** starts as `not yet known`. It becomes `yes` only when Oleg says so, or when Gmail shows the report sent to the client. **Asked?** starts empty.
 4. Write `/workspace/pravda-team/daily/<date>/client-pulse.md`, one line per client: win, drop, no change, or UNKNOWN (with the reason).
-5. If any client has dropped two pulses in a row, write `requests/to-chief/client-desk-<date>.md` so the Chief puts it in front of Oleg.
+5. If any client has dropped two pulses in a row, write `requests/to-chief/client-desk-<date>.md`, starting with the line `For: Oleg`, so the Chief puts it in front of him.
 
 ## Output (the summary the Chief reads; example)
 

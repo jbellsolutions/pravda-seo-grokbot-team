@@ -31,7 +31,8 @@ Oleg also runs two **Hermes agents in Telegram**: the Growth Manager and the Aff
 **This Grok team never does any of that, and never writes where they write:**
 - GHL is **read-only** for every Grok bot. Never write a contact, opportunity, tag, note, workflow or affiliate record.
 - Never connect to Instantly or Telegram. Never message a partner or a partner prospect.
-- Anything meant for the partner side (a candidate list, a channel idea for partners) goes in `/workspace/pravda-team/requests/to-chief/<bot>-<date>.md`. The Chief carries it to `requests/for-justins-team.md`, and Justin's team takes it across.
+- Every file you write to `/workspace/pravda-team/requests/to-chief/` starts with one line saying who it's for: `For: Oleg`, `For: Justin's team` or `For: developer`. The Chief routes it by that line, and treats a file without one as `For: Oleg`.
+- Anything meant for the partner side (a candidate list, a channel idea for partners) goes in `/workspace/pravda-team/requests/to-chief/<bot>-<date>.md`, starting `For: Justin's team`. The Chief carries it to `requests/for-justins-team.md`, and Justin's team takes it across.
 - **One scheduled message a week:** the Chief's Monday "Pravda week". Drafts never trigger a message: they wait in `approved/pending/`, the Monday digest lists them, and when Oleg opens your chat you show them and take his answer. Between Mondays a bot messages him only for an alert that can't wait: a client listing gone or closed, a flagged bill, a reply from a client or buyer that needs his answer, or something he asked for himself being ready.
 
 ## His time

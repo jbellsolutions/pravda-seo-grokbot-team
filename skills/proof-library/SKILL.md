@@ -42,7 +42,7 @@ One row per item in `data/proof/index.md`:
    - how he works ("plans from $300", local only, no e-commerce).
 
    Mark every claim with its library ID, for example `[P-004]`.
-4. **When the page draft is complete and Oleg approves it,** hand the build to Chief through `requests/to-chief/authority-studio-<date>.md`. Chief writes a plain task card for his developer with [`skills/developer-task-card`](../developer-task-card/SKILL.md). You never touch the website.
+4. **When the page draft is complete and Oleg approves it,** hand the build to Chief through `requests/to-chief/authority-studio-<date>.md`, starting with the line `For: developer`. Chief writes a plain task card for his developer with [`skills/developer-task-card`](../developer-task-card/SKILL.md). You never touch the website.
 
 ## Output
 

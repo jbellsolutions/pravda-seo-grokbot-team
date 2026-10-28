@@ -33,7 +33,7 @@ Oleg saw second- and third-brain tools at MIT and liked them: "they got so many 
    - **Open questions.**
 3. Add each decision to `/workspace/pravda-team/vault/Decisions.md`: the date, the decision, the quote, a link to the call note.
 4. Add a line to `/workspace/pravda-team/vault/Daily/<date>.md` linking the note.
-5. For each to-do another bot owns, write `requests/to-<bot>/chief-<date>.md`. To-dos for the partner side go to `requests/to-chief/` → `requests/for-justins-team.md`. New ideas from Oleg become ask rows (`ask-ledger` skill).
+5. For each to-do another bot owns, write `requests/to-<bot>/chief-<date>.md`. To-dos for the partner side go straight into `requests/for-justins-team.md` (you write it), with client names left out. New ideas from Oleg become ask rows (`ask-ledger` skill).
 6. Reply to Oleg with the short version.
 
 Speaker labels in auto-transcripts are often wrong. When a line's speaker is a guess, write "(speaker inferred)".
